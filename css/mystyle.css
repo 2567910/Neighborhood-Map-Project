@@ -1,0 +1,240 @@
+* {
+	box-sizing: border-box;
+}
+
+body,
+html,
+#container {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+#topbanner {
+	height: 50px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	z-index: 2;
+	background-color: rgb(168, 84, 51);
+	color: white;
+}
+
+#topbanner,
+#menumain,
+#searchmain,
+#hotspots {
+	will-change: transform;
+	transform: translateZ(0);
+}
+
+#map {
+	z-index: 1;
+	width: 100%;
+	height: calc(100% - 50px);
+	top: 50px;
+}
+
+.taggs{
+	padding:0 20px 0 20px;
+	color: rgb(168, 84, 51);
+}
+
+.search {
+	cursor: pointer;
+	color: white;
+	margin: 50px 10px 0px 10px;
+}
+
+.topicon{
+	width: 40px;
+	margin: 10px;
+	cursor: pointer;
+}
+
+h1 {
+	line-height: 50px;
+	margin: 0;
+}
+h3 {
+	color: rgb(168, 84, 51);
+}
+h4 {
+	float:left;
+}
+
+#menumain {
+	position: absolute;
+	top: 50px;
+	margin: 0;
+	padding-top: 25px;
+	z-index: 2;
+	background-color: rgba(39, 39, 39, 0.73);
+	color: white;
+}
+
+#searchmain {
+	position: absolute;
+	top: 0px;
+	right: 0;
+	z-index: 2;
+}
+
+#hotspots {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	z-index: 2;
+	background-color: rgba(39, 39, 39, 0.73);
+	color: white;
+}
+
+#inhalt,
+#detailedinfo {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	z-index: 2;
+	background-color: rgba(39, 39, 39, 0.73);
+	color: white;
+}
+
+#inhalt,
+#hotspots,
+#menumain,
+#detailedinfo {
+	height: calc(100% - 50px);
+	overflow-y: auto;
+	width: 250px;
+}
+
+.item {
+	padding: 10px 20px;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+.item:hover {
+	background-color: rgb(168, 84, 51);
+}
+
+button.item {
+	width: 100%;
+	padding: 0 20px;
+	background: rgb(168, 84, 51);
+	border-color: rgb(168, 84, 51);
+}
+
+#searchbox {
+	height: 40px;
+	margin: 0;
+	padding: 0 20px;
+	display: inline;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.filtering {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 5px 10px 5px;
+}
+
+#filterBox {
+	width: 100%;
+	height: 40px;
+	padding: 0 20px;
+	border-color: #a85433;
+	border-radius: 50px;
+	border-width: 5px;
+	background: none;
+	color:white;
+}
+
+#filterButton {
+	margin-left: 14px;
+	cursor: pointer;
+	background-color: #a85433;
+	border:none;
+	border-radius: 50px;
+}
+
+
+.closefav {
+	margin-left: calc(50% - 20px);
+}
+
+.details {
+	width: 100%;
+	line-height: 45px;
+	background-color: #c3c;
+	border-radius: 10px;
+    font-size: 24px;
+}
+
+.weather {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.weather {
+	margin-left: 0px;
+}
+
+.weathertitle {
+	width: 100%;
+	font-size: 1.17em;
+	float: left;
+}
+
+.weathertitle p {
+	margin: 15px 0 0 0;
+	font-weight: bold;
+	float: left;
+}
+
+.functionItem {
+	margin: 14px 14px 15px 0px;
+	width: 100%;
+	cursor: pointer;
+	background-color: rgb(168, 84, 51);
+	padding: 10px;
+}
+
+.submenubar {
+	display: flex;
+	justify-content: space-between;
+}
+
+.submenus {
+	width: 30px;
+	height: 30px;
+	margin: 2px 5px;
+	cursor: pointer;
+}
+
+.detailscontent,
+#optionsbutton {
+	padding: 0 15px;
+}
+
+.addressdiv {
+	padding: 5px 20px;
+}
+
+@media only screen and (max-width: 500px){
+	#inhalt,
+	#hotspots,
+	#menumain,
+	#detailedinfo{
+		width: 100%;
+	}
+	.mobileoff{
+	display: none;
+}
+}

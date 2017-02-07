@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Hotspots Schmalkalden</title>
+	<link href="vendor/favicon.png" rel="shortcut icon" >
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/mystyle.css" >
+    <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+	<div id="container">
+		<main id="map" data-bind="attr: {width : mapWidth, left: mapLeft}"></main>
+		<!-- Top most banner !-->
+		<header id="topbanner">
+			<i class="menu topicon fa fa-bars fa-2x" data-bind="click: showMenu" aria-hidden="true"></i>
+			<h1>Hotspots <span class=mobileoff>Schmalkalden </span></h1>
+			<i class="search topicon fa fa-search fa-2x" aria-hidden="true" data-bind="click: showSearch" ></i>
+		</header>
+		<!-- Menu, initially hidden !-->
+		<aside id="menumain" data-bind="visible: showMenuVar">
+			<div data-bind="foreach: menu()">
+				<div class="item" data-bind="text: $data, click: $root.respond"></div>
+			</div>
+			<button class="item" data-bind="click: closeMenu">Menü schließen</button>
+		</aside>
+		<!-- Search box, initially hidden !-->
+		<aside id="searchmain" data-bind="visible: showSearchVar">
+			<div class="menucontain">
+				<input type="text" name="search" id="searchbox">
+				<i class="search fa fa-times fa-2x" data-bind="click: hideSearch" aria-hidden="true" "></i>
+			</div>
+
+		</aside>
+		<aside id="hotspots" data-bind="visible: showHotspots">
+			<div class="submenubar">
+				<i class="submenus fa fa-arrow-left fa-2x" data-bind="click: showMenu" aria-hidden="true"></i>
+				<i class="submenus fa fa-times fa-2x" data-bind="click: reset" aria-hidden="true"></i>
+			</div>
+			<div class="filtering">
+				<input type="text" id="filterBox" data-bind ="textInput: initial">
+				<button id="filterButton" data-bind ="click: filterFunc">Suchen</button>
+			</div>
+			<div class= taggs>
+				<p>Suche z.B. nach: Essen, Club, Bar, Einkaufen, Burger</p>
+			</div>
+			<div data-bind="foreach: HOTSPOTS()">
+				<div data-bind="text: title, event :{mouseout: $root.resetIcons, mouseover: $root.showThisMarker, click: $root.changeCenter}" class="item"></div>
+			</div>
+
+		</aside>
+		<!-- Acknowledgements, initially hidden !-->
+		<aside id="inhalt" data-bind="visible: showInhalt">
+			<div class="submenubar">
+				<i class="submenus fa fa-arrow-left fa-2x" data-bind="click: showMenu" aria-hidden="true"></i>
+				<i class="submenus fa fa-times fa-2x" data-bind="click: reset" aria-hidden="true"></i>
+			</div>
+			<div data-bind="foreach: inhalt()">
+				<div class="item" data-bind="text: item"></div>
+			</div>
+		</aside>
+		<!--Detailed info panel about a place, initially hidden !-->
+		<aside id="detailedinfo" data-bind="visible: showDetails">
+			<div class="submenubar">
+				<i class="submenus fa fa-times fa-2x" data-bind="click: reset" aria-hidden="true"></i>
+			</div>
+
+			<div class="detailscontent"><h3 data-bind="text: infoTitle()">Details</h3></div>
+			<div class="detailscontent"><img alt="Google streetview image" src="#" data-bind ="attr: {src: infoURL(), alt: inforAlt(), width: '100%'}"></div>
+			<div class="addressdiv" data-bind="text: fullAddress(), visible: fullAddress().length > 0"></div>
+			<div id="optionsbutton">
+					<i class="functionItem fa fa-trash-o butti" data-bind="text: saveOption(), click: $root.switchSave"></i>
+			<div class="weather" data-bind="visible: wtresponse() > 0">
+				<div class="weathertitle" style="color: rgb(168, 84, 51);"> <p>So ist das Wetter in:</p></div>
+				<h4 data-bind="text: infoWTName()">Stadt Wetter</h4>
+				<img src="#" alt="" data-bind="attr: {src: weatherURL(), alt: weatherAlt()}">
+			</div>
+		</aside>
+	</div>
+	<script src="js/model.js"></script>
+	<script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/knockout-3.4.0.js"></script>
+	<script src="js/ko.js">	</script>
+    <script src = "js/map.js">  </script>
+	<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3ynkO5ktim9d7A1Dr1lmHdgNQxF479UM&libraries=geometry,places&v=3&callback=initMap" onerror="mapError()">
+	</script>
+</body>
+
+</html>
