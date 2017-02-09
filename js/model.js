@@ -16,10 +16,13 @@ function initNewHotspots() {
 	}
 }
 initNewHotspots();
-var Lukasseyfarth = document.write("<p>Link: " + txt.link("http://www.w3schools.com") + "</p>");
-//var Lukas Seyfarth = [
-//	{item: "All icons made by http://fontawesome.io/"},
-//];
+
+//Just the link in the menu bar
+//    var Lukasseyfarth = {
+//        url: ko.observable("year-end.html"),
+//        details: ko.observable("Report including final year-end statistics")
+//    };
+
 var inhalt = [
 	{item: "All icons made by http://fontawesome.io/"},
 	{item: "Udacity Neighborhood Map Project"},

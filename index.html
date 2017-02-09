@@ -52,7 +52,7 @@
 			</div>
 
 		</aside>
-		<!-- Acknowledgements, initially hidden !-->
+		<!-- Inhalt, initially hidden !-->
 		<aside id="inhalt" data-bind="visible: showInhalt">
 			<div class="submenubar">
 				<i class="submenus fa fa-arrow-left fa-2x" data-bind="click: showMenu" aria-hidden="true"></i>
@@ -62,7 +62,18 @@
 				<div class="item" data-bind="text: item"></div>
 			</div>
 		</aside>
-		<!--Detailed info panel about a place, initially hidden !-->
+
+		<!-- Lukas, just the link to my Page
+		<aside id="Lukasseyfarth" data-bind="visible: showLukas">
+			<div class="submenubar">
+				<i class="submenus fa fa-arrow-left fa-2x" data-bind="click: showMenu" aria-hidden="true"></i>
+				<i class="submenus fa fa-times fa-2x" data-bind="click: reset" aria-hidden="true"></i>
+			</div>
+			<div data-bind="foreach: Lukasseyfarth()">
+				<div class="item" data-bind="text: item"></div>
+			</div>
+		</aside>!-->
+		<!--The place Details, initially hidden !-->
 		<aside id="detailedinfo" data-bind="visible: showDetails">
 			<div class="submenubar">
 				<i class="submenus fa fa-times fa-2x" data-bind="click: reset" aria-hidden="true"></i>
@@ -74,7 +85,7 @@
 			<div id="optionsbutton">
 					<i class="functionItem fa fa-trash-o butti" data-bind="text: saveOption(), click: $root.switchSave"></i>
 			<div class="weather" data-bind="visible: wtresponse() > 0">
-				<div class="weathertitle" style="color: rgb(168, 84, 51);"> <p>So ist das Wetter in:</p></div>
+				<div class="weathertitle" style="color: rgb(168, 84, 51);"><p>So ist das Wetter in:</p></div>
 				<h4 data-bind="text: infoWTName()">Stadt Wetter</h4>
 				<img src="#" alt="" data-bind="attr: {src: weatherURL(), alt: weatherAlt()}">
 			</div>

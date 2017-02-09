@@ -8,11 +8,11 @@ function AppViewModel() {
 	this.showMenuVar = ko.observable(false);
 	this.showSearchVar = ko.observable(false);
 	this.showHotspots = ko.observable(false);
-	this.showInhalt = ko.observable(false);
+	this.showInhalt = ko.observable(true);
 	this.showDetails = ko.observable(false);
 	this.mapWidth = ko.observable("100%");
 	this.mapLeft = ko.observable("0");
-//	this.Lukasseyfarth = ko.observableArray(false);
+//	this.Lukasseyfarth = ko.observableArray(Lukasseyfarth);
 //	this.showLukas = ko.observable(false);
 	// Functions
 	this.reset = function() {
@@ -22,7 +22,6 @@ function AppViewModel() {
 		self.showInhalt(false);
 		self.showDetails(false);
 		self.resettingMap();
-//		self.showLukas(false);
 		myInfowindow.close();
 	};
 	// functions to resize maps when showing and hiding the left-side menu on larger
@@ -99,18 +98,16 @@ function AppViewModel() {
 			case 'Inhalte':
 				self.reset();
 				self.mapFitting();
-				self.showInhalte();
+				self.showInhalt();
 				break;
 			case 'Hotspots aktualisieren':
 				localStorage.removeItem('myMarkers');
 				initNewHotspots();
 				initMap();
 				break;
-			case 'Lukas Seyfarth':
-				self.reset();
-				self.mapFitting();
-				self.showLukas();
-				break;
+//			case 'Lukasseyfarth':
+//				self.showLukas();
+//				break;
 		}
 	};
 
@@ -145,9 +142,9 @@ function AppViewModel() {
 		self.showInhalt(true);
 	};
 
-	this.showLukas = function() {
-		self.showLukas(true);
-	};
+//	this.showLukas = function() {
+//		self.showLukas(true);
+//	};
 
 	// Animation for a chosen marker
 	this.showThisMarker = function(clickedItem){
