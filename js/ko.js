@@ -215,7 +215,7 @@ function AppViewModel() {
 		// Weather condition
 		var wturl = "http://api.openweathermap.org/data/2.5/weather?lat="+
 					marker.position.lat()+"&lon="+
-					marker.position.lng()+"&appid=457b6d0eb651722c34fa15758ad21a75";
+					marker.position.lng()+"&appid=00410fc5ea64ac6a03711b3573d43973";
 
 		$.ajax({
 			url: wturl,
