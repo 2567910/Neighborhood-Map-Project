@@ -3,28 +3,26 @@ var highLightThisMarker, stopHighLighting, currentMarkerIcon, defaultIcon, geoco
 var map, createMarkers, myInfowindow, markers, markerHot, setBounds, defaultBounds, performAjax;
 var isTouchDevice = 'ontouchstart' in document.documentElement;
 var screenWidth = screen.width;
-// items in menu
-var menuItems = ["Hotspots Schmalkalden", "Suchen", "Inhalte", "Hotspots aktualisieren", "Lukasseyfarth"];
+// Hotspots=Clubs (in KO.js u will find Hotspots) I had to change the Location again becaue in my town there is no google street view!
+var menuItems = ["Besten Club´s anzeigen", "Suchen", "Inhalte", "Clubs aktualisieren"];
 // Store some markers into localStorage
 function initNewHotspots() {
 	if(!localStorage.myMarkers){
-		var myMarkers = [{"title":"ALDI","location":{"lat":50.718120,"lng":10.466949}},
-			{"title":"FH Schmalkalden","location":{"lat":50.717433,"lng":10.463801}},
-			{"title":"REWE","location":{"lat":50.721054,"lng":10.458085}},
-			{"title":"McDonalds","location":{"lat":50.715314,"lng":10.468343}}];
+		var myMarkers = [{"title":"P1","location":{"lat":48.144129,"lng":11.584951}},
+			{"title":"Gecko","location":{"lat":48.142269,"lng":11.570739}},
+			{"title":"Crux","location":{"lat":48.137634,"lng":11.578214}},
+			{"title":"Paradiso Tanzbar","location":{"lat":48.133210,"lng":11.574897}},
+			{"title":"Neuraum","location":{"lat":48.142273,"lng":11.550636}},
+			{"title":"Cord Club","location":{"lat":48.136460,"lng":11.564288}}];
 		localStorage.setItem("myMarkers", JSON.stringify(myMarkers));
 	}
 }
 initNewHotspots();
 
 //Just the link in the menu bar
-//    var Lukasseyfarth = {
-//        url: ko.observable("year-end.html"),
-//        details: ko.observable("Report including final year-end statistics")
-//    };
 
 var inhalt = [
-	{item: "All icons made by http://fontawesome.io/"},
+	{item: "All icons from http://fontawesome.io/"},
 	{item: "Udacity Neighborhood Map Project"},
 	{item: "OpenWeatherMap API from http://openweathermap.org/"},
 	{item: "google maps API"},

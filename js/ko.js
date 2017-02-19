@@ -8,7 +8,7 @@ function AppViewModel() {
 	this.showMenuVar = ko.observable(false);
 	this.showSearchVar = ko.observable(false);
 	this.showHotspots = ko.observable(false);
-	this.showInhalt = ko.observable(true);
+	this.showInhalt = ko.observable(false);
 	this.showDetails = ko.observable(false);
 	this.mapWidth = ko.observable("100%");
 	this.mapLeft = ko.observable("0");
@@ -81,7 +81,7 @@ function AppViewModel() {
 	//Functions when menuItems are clicked
 	this.respond = function(clickedItem) {
 		switch (clickedItem){
-			case 'Hotspots Schmalkalden':
+			case 'Besten Club´s anzeigen':
 				self.reset();
 				self.mapFitting();
 				self.showNewHotspots();
@@ -98,9 +98,9 @@ function AppViewModel() {
 			case 'Inhalte':
 				self.reset();
 				self.mapFitting();
-				self.showInhalt();
+				self.showInhalte	();
 				break;
-			case 'Hotspots aktualisieren':
+			case 'Clubs aktualisieren':
 				localStorage.removeItem('myMarkers');
 				initNewHotspots();
 				initMap();
@@ -196,7 +196,7 @@ function AppViewModel() {
 		self.wtresponse(-1);
 		self.infoTitle(marker.title);
 		// the street view image
-		var streetviewUrl = 'http://maps.googleapis.com/maps/api/streetview?size=500x300&location=' + marker.title + '&key=AIzaSyC3ynkO5ktim9d7A1Dr1lmHdgNQxF479UM';
+		var streetviewUrl = 'http://maps.googleapis.com/maps/api/streetview?size=500x300&location=' + marker.position.lat() + "," + marker.position.lng() + '&key=AIzaSyC3ynkO5ktim9d7A1Dr1lmHdgNQxF479UM';
 		self.infoURL(streetviewUrl);
 		// formatted address
 		self.fullAddress("");

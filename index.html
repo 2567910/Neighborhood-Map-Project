@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Hotspots Schmalkalden</title>
+	<title>Münchner Club`s</title>
 	<link href="vendor/favicon.png" rel="shortcut icon" >
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,13 +17,17 @@
 		<!-- Top most banner !-->
 		<header id="topbanner">
 			<i class="menu topicon fa fa-bars fa-2x" data-bind="click: showMenu" aria-hidden="true"></i>
-			<h1>Hotspots <span class=mobileoff>Schmalkalden </span></h1>
+			<h1><span class=mobileoff>Die Besten </span>Münchner Club`s</h1>
 			<i class="search topicon fa fa-search fa-2x" aria-hidden="true" data-bind="click: showSearch" ></i>
 		</header>
 		<!-- Menu, initially hidden !-->
 		<aside id="menumain" data-bind="visible: showMenuVar">
 			<div data-bind="foreach: menu()">
 				<div class="item" data-bind="text: $data, click: $root.respond"></div>
+			</div>
+					<!-- The link to my Page-->
+			<div class = "link">
+				<a target="_blank" style="color: white;" href="http://www.lukasseyfarth.com/">LukasSeyfarth.com</a>
 			</div>
 			<button class="item" data-bind="click: closeMenu">Menü schließen</button>
 		</aside>
@@ -45,7 +49,7 @@
 				<button id="filterButton" data-bind ="click: filterFunc">Suchen</button>
 			</div>
 			<div class= taggs>
-				<p>Suche z.B. nach: Essen, Club, Bar, Einkaufen, Burger</p>
+				<p>Suche dir deine Clubs aus und füge weitere Clubs hinzu. Bald kannst du deine Clubs auch bewerten und mit Freunden teilen.</p>
 			</div>
 			<div data-bind="foreach: HOTSPOTS()">
 				<div data-bind="text: title, event :{mouseout: $root.resetIcons, mouseover: $root.showThisMarker, click: $root.changeCenter}" class="item"></div>
@@ -63,17 +67,6 @@
 			</div>
 		</aside>
 
-		<!-- Lukas, just the link to my Page
-		<aside id="Lukasseyfarth" data-bind="visible: showLukas">
-			<div class="submenubar">
-				<i class="submenus fa fa-arrow-left fa-2x" data-bind="click: showMenu" aria-hidden="true"></i>
-				<i class="submenus fa fa-times fa-2x" data-bind="click: reset" aria-hidden="true"></i>
-			</div>
-			<div data-bind="foreach: Lukasseyfarth()">
-				<div class="item" data-bind="text: item"></div>
-			</div>
-		</aside>!-->
-		<!--The place Details, initially hidden !-->
 		<aside id="detailedinfo" data-bind="visible: showDetails">
 			<div class="submenubar">
 				<i class="submenus fa fa-times fa-2x" data-bind="click: reset" aria-hidden="true"></i>
@@ -90,6 +83,7 @@
 				<img src="#" alt="" data-bind="attr: {src: weatherURL(), alt: weatherAlt()}">
 			</div>
 		</aside>
+
 	</div>
 	<script src="js/model.js"></script>
 	<script src="js/lib/jquery-3.1.1.min.js"></script>
