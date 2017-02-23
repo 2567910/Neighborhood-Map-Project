@@ -58,7 +58,13 @@ a,
 .search {
 	cursor: pointer;
 	color: white;
-	margin: 50px 10px 0px 10px;
+
+}
+
+.searchclosing {
+	cursor: pointer;
+	color: white;
+	padding: 0 0 50px 20px
 }
 
 .topicon{
@@ -90,8 +96,8 @@ h4 {
 
 #searchmain {
 	position: absolute;
-	top: 0px;
-	right: 0;
+	top: 66px;
+    right: 20px;
 	z-index: 2;
 }
 

@@ -1,4 +1,4 @@
-# Welcome to my neighborhood map Project
+# Welcome to my the neighborhood map Project
 
 ## Table of contents
 
