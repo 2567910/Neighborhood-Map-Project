@@ -181,4 +181,4 @@ function mapError(){
 	alert("Cannot Load map, please try again letter!");
 }
 // run before changing marks
-//localStorage.clear();
+localStorage.clear();
